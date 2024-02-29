@@ -1,4 +1,9 @@
+$primary-color: #0074d9;
+$linear-gradient: linear-gradient(to right, #c4d7e6, #66a5ad, #ff0000);
+$font: cursive;
+
 body {
+    background: $linear-gradient;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -11,4 +16,8 @@ main {
 section {
     max-width: 800px;
     margin: 50px auto;
+
+    strong{
+        color: $primary-color;
+    }
 }

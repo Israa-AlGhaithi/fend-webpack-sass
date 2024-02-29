@@ -1,12 +1,63 @@
-form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+@mixin theme($theme: darkGray) { //using mixin
+ // background: $theme;
+  box-shadow: 0 6px 0px 12px rgba($theme, .25);
+  font-family: cursive;
 }
 
-input {
+.action-type { //using a regular class selector to extend
     padding: 5px 20px;
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+    cursor: pointer;
+
+}
+
+// using nesting
+form {
+    border: 1px solid #545454;
+    border-radius: 3px;
+    padding: 40px;
+    @include theme;
+
+    input {
+        &[type="text"] { //using the ampersand '&'
+            padding: 5px 20px;
+            width: 100%;
+            line-height: 16px;
+            margin: 10px 0;
+
+            &:focus {
+                /* Styles for focused text input */
+                border-color: #66a5ad;
+                box-shadow: 0 0 5px rgba(102, 165, 173, 0.5); /* Add a subtle shadow */
+                outline: none; /* Remove default focus outline */
+            }
+        }
+
+        &[type="submit"] { //using the ampersand '&'
+
+            @include theme($theme: rgba(102, 165, 173, 0.5)); //include mixin
+            @extend .action-type; //extend
+            opacity: .7;
+
+            &:hover { //when submit hover
+                background-color:  rgba(102, 165, 173, 0.5); /* Add a subtle shadow */
+                color: white;
+            }
+
+        }
+
+        &[type="clear"] { //using the ampersand '&'
+            @extend .action-type;
+            padding: 3px 18px;
+            background-color: brown;
+            opacity: .5;
+
+            &:hover { //when submit hover
+                background-color:  rgba(102, 165, 173, 0.5); /* Add a subtle shadow */
+                color: white;
+            }
+        }
+    }
 }
