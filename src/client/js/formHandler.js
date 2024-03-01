@@ -8,7 +8,7 @@ function handleSubmit(event) {
 
     /* Variables */
     const baseURL = 'https://api.openweathermap.org/data/2.5/';
-    const apiKey = 'b4c921d8c7cd365351d4d3b006368d9d&units=imperial'; //my api key
+    const apiKey = 'yourapikey&units=imperial'; //api key
     const baseIconURL = 'https://openweathermap.org/img/wn/';
 
     console.log("::: Form Submitted :::")
