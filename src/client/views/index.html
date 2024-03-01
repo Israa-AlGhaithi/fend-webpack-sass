@@ -24,14 +24,19 @@
         <main>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="name" type="text" name="input" value=""  placeholder="Name">
+                    <input id="zip" type="text" name="input" value=""  placeholder="Zip code">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             <section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="results-name"></div>
+                <div id="results-zip"></div>
+                <div id="results-temp"></div>
+                <div id="results-weather"></div>
+                <div id="results-icon"></div>
             </section>
         </main>
 
